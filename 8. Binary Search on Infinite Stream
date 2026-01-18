@@ -1,0 +1,13 @@
+def infinite_binary_search(arr, target):
+    l, r = 0, 1
+    while arr[r] < target:
+        l, r = r, r * 2
+    while l <= r:
+        m = (l + r) // 2
+        if arr[m] == target:
+            return m
+        if arr[m] < target:
+            l = m + 1
+        else:
+            r = m - 1
+    return -1
