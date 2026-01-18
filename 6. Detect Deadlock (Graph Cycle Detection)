@@ -1,0 +1,15 @@
+def has_deadlock(graph):
+    visited, stack = set(), set()
+
+    def dfs(v):
+        visited.add(v)
+        stack.add(v)
+        for n in graph.get(v, []):
+            if n not in visited and dfs(n):
+                return True
+            if n in stack:
+                return True
+        stack.remove(v)
+        return False
+
+    return any(dfs(v) for v in graph if v not in visited)
