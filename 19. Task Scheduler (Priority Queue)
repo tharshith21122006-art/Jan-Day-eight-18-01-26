@@ -1,0 +1,11 @@
+import heapq
+
+class Scheduler:
+    def __init__(self):
+        self.tasks = []
+
+    def add(self, priority, task):
+        heapq.heappush(self.tasks, (priority, task))
+
+    def run(self):
+        return heapq.heappop(self.tasks)[1]
