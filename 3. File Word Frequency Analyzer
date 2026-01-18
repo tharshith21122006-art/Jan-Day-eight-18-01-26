@@ -1,0 +1,6 @@
+from collections import Counter
+
+def word_frequency(file):
+    with open(file) as f:
+        words = f.read().lower().split()
+    return Counter(words).most_common(10)
