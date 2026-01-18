@@ -1,0 +1,2 @@
+def detect_drift(old, new, threshold=0.2):
+    return abs(sum(old)/len(old) - sum(new)/len(new)) > threshold
