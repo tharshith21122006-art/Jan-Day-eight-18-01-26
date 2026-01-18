@@ -1,0 +1,10 @@
+import threading
+
+class Counter:
+    def __init__(self):
+        self.value = 0
+        self.lock = threading.Lock()
+
+    def increment(self):
+        with self.lock:
+            self.value += 1
