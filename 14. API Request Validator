@@ -1,0 +1,3 @@
+def validate_request(req):
+    required = {"id", "token", "payload"}
+    return required.issubset(req.keys())
