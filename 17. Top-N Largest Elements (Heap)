@@ -1,0 +1,4 @@
+import heapq
+
+def top_n(nums, n):
+    return heapq.nlargest(n, nums)
